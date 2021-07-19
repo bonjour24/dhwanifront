@@ -5,3 +5,71 @@
 .cont {
   margin: 40px auto 40px auto;
 }
+
+.cardHolder input{
+  padding: 5px;
+  border-radius: 3px;
+  border: 0.5px solid gray;
+  margin: 20px 5px;
+  width: 10%;
+  text-align: center;
+  background-color: rgb(243, 243, 243);
+}
+
+#cardImg{
+  max-height: 200px;
+}
+
+.cardHolder{
+  width: 50%;
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 8px gray;
+  border-radius: 3px;
+}
+
+.cardHolder2{
+  width: 30%;
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 30px;
+  box-shadow: 1px 1px 4px gray;
+  border-radius: 3px;
+}
+
+.cardBtn{
+  color: white;
+  margin-top: 20px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: 0.5px solid rgb(97, 97, 97);
+  box-shadow: 1px 1px 4px gray;
+  background-color: green;
+}
+
+.cardBtn:hover{
+  background-color: rgb(0, 175, 0);
+}
+
+.cardDel{
+  color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: 0.5px solid rgb(97, 97, 97);
+  box-shadow: 1px 1px 4px gray;
+  background-color: rgb(255, 74, 74);
+}
+
+.cardDel:hover{
+  background-color: rgb(204, 12, 12);
+}
+
+.element{
+  color: rgb(66, 66, 66);
+  font-size: large;
+  border-radius: 4px;
+  display: inline;
+}

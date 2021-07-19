@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class Card extends Component {
-  state = { list: [4201466059221871] };
+  state = { list: ["4201 4660 5922 1871"] };
   render() {
     const list = this.state.list;
     console.log(list);
@@ -38,10 +38,10 @@ class Card extends Component {
     }
     const addDetails = (e) => {
       e.preventDefault();
-      const n1 = parseInt(document.getElementById("n1").value);
-      const n2 = parseInt(document.getElementById("n2").value);
-      const n3 = parseInt(document.getElementById("n3").value);
-      const n4 = parseInt(document.getElementById("n4").value);
+      const n1 = document.getElementById("n1").value;
+      const n2 = document.getElementById("n2").value;
+      const n3 = document.getElementById("n3").value;
+      const n4 = document.getElementById("n4").value;
       if (
         n1.length !== 4 ||
         n2.length !== 4 ||
@@ -50,7 +50,7 @@ class Card extends Component {
       )
         alert("Card Info Incorrect!");
       else {
-        const cardNum = "" + n1 + n2 + n3 + n4;
+        const cardNum = n1 + " " + n2 + " " + n3 + " " + n4;
         parseInt(cardNum);
         const temp = [...list];
         temp.push(cardNum);
@@ -62,12 +62,19 @@ class Card extends Component {
       const temp = list.splice(1, e);
       this.setState({ list: temp });
     };
-    
+
     return (
       <div className="cont">
-        <div>Hi</div>
         <div className="cardHolder" onKeyUp={(e) => keyUp(e)}>
-          Card Number <input id="n1" type="number" maxLength="4" />
+          <img
+          id="cardImg"
+            src="https://images-ext-1.discordapp.net/external/6r8yLR5Qgx66TD6qf3TSdEPxxBNpyEJ8H0YJhpN2PQw/https/www.nicepng.com/png/detail/87-870350_credit-cards-all-credit-card-logos.png?width=600&height=416"
+            alt="card"
+            width="40%"
+          />
+          <br /> <br />
+          Enter Card Number : <br />
+          <input id="n1" type="number" maxLength="4" />
           <input id="n2" type="number" maxLength="4" />
           <input id="n3" type="number" maxLength="4" />
           <input
@@ -78,15 +85,17 @@ class Card extends Component {
             onChange={(e) => stopInput(e)}
           />{" "}
           <br />
-          <button onClick={(e) => addDetails(e)}>Add card details</button>
+          <button className="cardBtn" onClick={(e) => addDetails(e)}>
+            Add card details
+          </button>
         </div>
-        <div>
+        <div className="cardHolder2">
           {list.map((ele, index) => (
             <div key={index}>
-              <p>
-                {ele}
-                <button onClick={() => handleDelete(index)}>Delete</button>
-              </p>
+              <div className="element">{ele}</div>
+              <button className="cardDel" onClick={() => handleDelete(index)}>
+                Delete
+              </button>
             </div>
           ))}
         </div>
